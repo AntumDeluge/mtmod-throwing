@@ -6,8 +6,8 @@ arrows = {
 	{"throwing:arrow_build", "throwing:arrow_build_entity"}
 }
 
-local creative = minetest.setting_getbool("creative_mode")
-local weapon_wear = minetest.setting_getbool("enable_weapon_wear")
+local creative = minetest.settings:get_bool("creative_mode")
+local weapon_wear = minetest.settings:get_bool("enable_weapon_wear")
 if weapon_wear == nil then
 	-- Default is enabled
 	weapon_wear = true
@@ -111,6 +111,6 @@ dofile(minetest.get_modpath("throwing").."/teleport_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/dig_arrow.lua")
 dofile(minetest.get_modpath("throwing").."/build_arrow.lua")
 
-if minetest.setting_get("log_mods") then
+if minetest.settings:get_bool("log_mods") then
 	minetest.log("action", "throwing loaded")
 end
